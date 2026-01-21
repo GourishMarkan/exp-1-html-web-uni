@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="userDetails" style="display: none;">
+        <h3>User Details</h3>
+        <p id="displayUsername"></p>
+        <p id="displayPassword"></p>
+    </div>
+</div>
+
+<script>
+document.querySelector('#loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.querySelector('#username').value;
+    const password = document.querySelector('#password').value;
+    
+    document.querySelector('#displayUsername').textContent = 'Username: ' + username;
+    document.querySelector('#displayPassword').textContent = 'Password: ' + password;
+    
+    document.querySelector('#userDetails').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
